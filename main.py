@@ -79,7 +79,7 @@ def confirm(email_part):
 while answer != "y":
   email_address = input("\nWhat is your email address for Gmail?\n")
   print(confirm(email_address))
-  
+
 answer = "n"
 
 while answer != "y":
@@ -117,8 +117,8 @@ for i in range(len(new_df[date_head2])):
     invalid_emails.append(emails[i])
     continue         
 
-if len(invalid_emails) == 0:
-  print(colors.green + "\nEmails sent successfully")
+if not invalid_emails:
+    print(colors.green + "\nEmails sent successfully")
 else:
-  print(colors.red + ("\nEmails to these email addresses did not send: ") + (str(", ".join(map(str, invalid_emails)))) + colors.reset)
+    print(colors.red + ("\nEmails to these email addresses did not send: ") + (str(", ".join(map(str, invalid_emails)))) + colors.reset)
 
